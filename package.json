@@ -1,0 +1,19 @@
+{
+  "name": "ghana-classifieds",
+  "version": "1.0.0",
+  "description": "Classified goods for sale in Ghana",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasamoah304/angularjs.git"
+  },
+  "author": "Stephen N Asamoah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasamoah304/angularjs/issues"
+  },
+  "homepage": "https://github.com/sasamoah304/angularjs"
+}
