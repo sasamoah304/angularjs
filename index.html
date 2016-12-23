@@ -1,42 +1,49 @@
-<!DOCTYPE <!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<title>ngClassified</title>
-	<link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css">
-	<link rel="stylesheet" type="text/css" href="node_modules/mdi/css/materialdesignicons.min.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body ng-app="ngClassifieds" ng-controller="classifiedsCtrl">
+  <head>
+    <title>ngClassifieds</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link href="node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
 
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <p><strong>Ghana Classfieds</strong></p>
-      <md-button>
-        <md-icon class="mdi mdi-plus-circle"></md-icon>
-        New Classified
-      </md-button>	
-    </div>
-  </md-toolbar>
+  <!-- Setting the right viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <md-content class="md-padding" layout="row" layout-wrap>
-	  <md-card flex="30" ng-repeat="classified in classifieds">
-	  	<img ng-src="{{classified.image}}" alt="">
-	  	<md-card-content>
-	  	 <div class="classified-info">
-	  	 	<h2 class="md-title"> {{classified.title}}</h2>
-	  	 	<h4>{{classified.posted | date}}</h4>
-	  	 	<h3>{{classified.price |currency}}</h3>
-	  	 	<p>{{classified.description}}</p>
-	  	 </div>
-	  	</md-card-content>
-	  </md-card>
-  </md-content>
+  </head>
+  <body ng-app="ngClassifieds">
 
-<script src="node_modules/angular/angular.js"></script>
-<script src="node_modules/angular-animate/angular-animate.js"></script>
-<script src="node_modules/angular-aria/angular-aria.js"></script>
-<script src="node_modules/angular-material/angular-material.js"></script>
-<script src="scripts/app.js"></script>
-<script src="components/classifieds.ctr.js"></script>
-</body>
+    <div ui-view></div>
+    
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAl8Tbs3_MXMYOOqTvRssGrSJbaqR5CdXU",
+        authDomain: "gclassified-c15fb.firebaseapp.com",
+        databaseURL: "https://gclassified-c15fb.firebaseio.com",
+        storageBucket: "gclassified-c15fb.appspot.com",
+        messagingSenderId: "263208730765"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="components/classifieds/classifieds.ctr.js"></script>
+    <script src="components/classifieds/classifieds.fac.js"></script>
+    <script src="components/classifieds/new/classifieds.new.ctr.js"></script>
+    <script src="components/classifieds/edit/classifieds.edit.ctr.js"></script>
+
+
+  </body>
 </html>
